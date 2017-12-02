@@ -739,10 +739,10 @@ def setup_first_pkg_of_list(pkglist):
     # The HAVE_pkg symbol is taken from the first alternative
     upkg = pkglist[0].upper().replace('-', '_')
     for pkg in pkglist:
-        if have_pkg(pkg):
-            pkgs.append(pkg)
-            defines.append('HAVE_{}=1'.format(upkg))
-            return True
+        #if have_pkg(pkg):
+        pkgs.append(pkg)
+        defines.append('HAVE_{}=1'.format(upkg))
+        return True
     return False
 
 for pkglist in optional_packages:
